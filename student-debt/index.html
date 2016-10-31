@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Student Debt per State</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+    /* custom css styles will go here */
+		
+		.bar{
+			stroke: none;
+			fill: #46984a;
+		}
+		
+
+    </style>
+</head>
+<body>
+	
+	
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+	<script>
+  	
+		
+        //your d3 code will go here
+		
+		var margin = {top:50, right:100, bottom:100, left:100},
+			width  = 800 - margin.left - margin.right,
+			height = 600 - margin.top - margin.bottom;
+
+		var svg = d3.select("body")
+			.append("svg")
+			.attr("width", "100%")
+			.attr("height", "100%")
+			.attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom));
+
+		var chart = svg.append("g")
+			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+		
+		var xScale = d3.scaleLinear()
+			.range([0, width]);
+
+		var yScale = d3.scaleBand()
+			.range([height, 0])
+			.padding(0.1);
+		
+		d3.csv("student_debt_per_state.csv", function(error, data){
+    		if (error) throw error; //catch any errors
+			
+		//map function goes through every element, then returns a number for average debt per borrower
+		data = data.map(function(d){ 
+    		d["Average debt per borrower"] = +d["Average debt per borrower"]; 
+    		return d;
+		});
+		
+		console.log(data);
+			
+			
+		//xScale.domain([0, d3.max(data, function(d){ return d["Average debt per borrower"]; })]);
+			
+		xScale.domain([0, 45000]);
+
+			//xscale is unique values in your data (Age Group, since they are all different)
+		yScale.domain(data.map(function(d){ return d["State"]; }));
+		
+		chart.selectAll(".bar")
+			.data(data)
+    		.enter()
+    		.append("rect")
+    		.attr("class", "bar")
+    		.attr("y", function(d){ return yScale(d["State"]); })
+			.attr("x", function(d){ return 0; })
+    		//.attr("x", function(d){ return xScale(d["Average debt per borrower"]); })
+    		.attr("width", function(d){ return xScale(d["Average debt per borrower"]); })
+    		.attr("height", function(d){ return yScale.bandwidth(); });
+		
+		
+		//adding y axis to the left of the chart
+		//svg.append("g")
+    		//.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+			//.call(d3.axisBottom(xScale).tickFormat(d3.format("$,")));
+
+		//adding x axis to the bottom of chart
+		//svg.append("g")
+		//	.attr("transform", "translate(" + margin.left + "," + (height + margin.top) + ")")
+		//	.call(d3.axisLeft(yScale))
+		//.selectAll("text")
+		//	.attr("transform", "rotate(-90, 15, 30)");
+		
+		
+		svg.append("g")
+			.attr("transform", "translate(" + margin.left + "," + (height + margin.top) + ")")
+			.call(d3.axisBottom(xScale).tickFormat(d3.format("$,")));
+		
+		svg.append("g")
+			.attr("transform", "translate(" + margin.left + "," +  margin.top + ")")
+    		.call(d3.axisLeft(yScale))
+			
+			
+		
+		svg.append("text")
+			.attr("y", height + 90)
+			.attr("x", width/2)
+			.text("Average debt per borrower")
+			.style("font-family", "Helvetica")
+			.style("font-size", "14px");
+			
+			
+		svg.append("g")
+    		.attr("transform", "translate(" + (width/2) + ", 25)")
+			.append("text")
+    		.text("Student Debt per State")
+			.style("font-family", "Helvetica")
+			.style("font-size", "20px");
+		
+			
+	})
+
+
+    </script>
+</body>
+</html>

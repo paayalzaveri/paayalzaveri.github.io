@@ -10,30 +10,36 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,600,700,800" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     
     <style>
         
         body{
-            background-color: #f1f1f1;
-            font-family: "Lato", sans-serif;
+            background-color: #ffffff;
+            font-family: "Helvetica", sans-serif;
         }
-        h1,h2,h3,h4,h5,h6{
-            font-weight: 600;
+        h1,h2,h3,h4,h5,h6,p{
+            font-weight: 500;
+			color: #1D2326;
         }
+		
+		h1{
+			padding-top:10px;
+		}
         
         .container{
             max-width: 960px;
         }
         
         .row{
-            padding-top:10px;
-            padding-bottom: 10px;
+            padding-top:15px;
+            padding-bottom: 15px;
         }
         
         .inner-box{
             background-color: #ffffff;
             box-shadow: 2px 0px 5px #ccc;
-			min-height: 300px;
+			min-height: 290px;
         }
         
         .inner-box > p,
@@ -43,13 +49,50 @@
             padding: 0 10px;
         }
 		
+		.inner-box > h3 {
+			font-size: 18px;
+
+		}
+		
+		.inner-box > p{
+			font-size: 13px;
+			color:#6A6A61;
+		}
+		
+		.lead{
+			font-size: 20px;
+		}
+		
+		.bio{
+			max-width:650px;
+			text-align: center;
+			margin-left:auto;
+			margin-right:auto;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+		
+		.bio > a{
+			color:#611427;
+		}
+		
+		.bio > a:hover{
+			color:#8C1D39;
+		}
+		
 		a{
-			color:#808080;
+			color:#6A6A61;
 		}
 		
 		a:hover{
 			color:#111111;
 		}
+		
+		.icon{
+			padding-bottom: 30px;
+		}
+		
+	
     
     </style>
 
@@ -63,8 +106,17 @@
     
     <header class="text-center">
         <h1>Paayal Zaveri</h1>
-        <p class="lead">A class portfolio for coding and data visualization</p>
+        <p class="lead"> Multimedia Journalist </p>
+		<p class="bio"> I'm a journalist from the San Francisco Bay Area and currently a master's candidate at the <a href="https://journalism.berkeley.edu/students/paayal_zaveri/"> University of California, Berkeley Graduate School of Journalism</a>. Here you can find a portfolio of my coding and data visualization projects. My writing and reporting porfolio can be found at <a href="paayalzaveri.com"> paayalzaveri.com</a>. </p>
     </header>
+	
+	<div class="container col-md-6 col-md-offset-3 text-center icon">
+		 <a href="mailto:paayalz2010@gmail.com" target="_blank"><i class="fa fa-envelope fa-2x"></i></a>
+		<a href="https://www.linkedin.com/in/paayal-zaveri-b902ba90" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+        <a href="https://twitter.com/paayalzaveri" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+        
+	
+	</div>
     
 
 
@@ -73,26 +125,14 @@
 
 
         <div class="row">
-            
-            <div class="col-sm-4 text-center">
-                <div class="inner-box">
-                    <a href="https://public.tableau.com/shared/C98G7643Y?:display_count=yes" target="_blank">
-                        <img class="img-responsive center-block" src="img/neonatal%20deaths.png" alt="chart">
-                    </a>
-                    <h3>Saving the Children</h3>
-                    <p>Neonatal deaths from 1990 to 2014</p>
-                </div>
-            </div>
-			
-			
-			
+            	
 			<div class="col-sm-4 text-center">
                 <div class="inner-box">
                     <a href="/student-debt/" target="_blank">
                         <img class="img-responsive center-block" src="student-debt/screenshot.png" alt="chart">
                     </a>
                     <h3>Student Debt per State</h3>
-                    <p>Built bar chart showing the average amount of student debt in each state</p>
+                    <p>Bar chart showing the average amount of student debt per state</p>
                 </div>
             </div>
 			
@@ -102,7 +142,17 @@
                         <img class="img-responsive center-block" src="oil-production/screenshot.png" alt="chart">
                     </a>
                     <h3>Global Oil Production</h3>
-                    <p>Built line chart showing the rate of global oil production from 2000 to 2014</p>
+                    <p>Line chart showing the change in rate of global oil production from 2000 to 2014</p>
+                </div>
+            </div>
+			
+			<div class="col-sm-4 text-center">
+                <div class="inner-box">
+                    <a href="http://richmondconfidential.org/2016/11/08/how-will-contra-costa-vote-in-the-presidential-campaign/" target="_blank">
+                        <img class="img-responsive center-block" src="img/richmond_map.png" alt="chart">
+                    </a>
+                    <h3>How will Contra Costa vote in the presidential campaign?</h3>
+                    <p>interactive map</p>
                 </div>
             </div>
 			
@@ -111,21 +161,33 @@
 		
 		<div class="row">
 			
+			<div class="col-sm-4 text-center">
+                <div class="inner-box">
+                    <a href="https://public.tableau.com/shared/C98G7643Y?:display_count=yes" target="_blank">
+                        <img class="img-responsive center-block" src="img/neonatal_deaths.png" alt="chart">
+                    </a>
+                    <h3>Saving the Children</h3>
+                    <p>Neonatal deaths from 1990 to 2014</p>
+                </div>
+            </div>
+			
 			
 			<div class="col-sm-4 text-center">
                 <div class="inner-box">
                     <a href="https://public.tableau.com/views/CO2emissions_17/Dashboard1?:embed=y&:display_count=yes" target="_blank">
-                        <img class="img-responsive center-block" src="img/co2%20emissions" alt="chart">
+                        <img class="img-responsive center-block" src="img/co2_emissions" alt="chart">
                     </a>
                     <h3>Global Warming: Whose to blame? </h3>
                     <p>Carbon Dioxide emissions from 2000 to 2011</p>
                 </div>
             </div>
 			
+			
+			
 			<div class="col-sm-4 text-center">
                 <div class="inner-box">
                     <a href="http://richmondconfidential.org/wp-content/uploads/2015/09/TESTRESULTS_Zaveri_final.jpg" target="_blank">
-                        <img class="img-responsive center-block" src="img/test%20results.png"alt="chart">
+                        <img class="img-responsive center-block" src="img/test_results.png"alt="chart">
                     </a>
                     <h3>Standardized testing results </h3>
                     <p><a href="http://richmondconfidential.org/2015/09/16/tougher-standardized-testing-in-schools-leads-to-poor-results-in-district/">Tougher standardized testing in schools highlights poor results in district</a></p>

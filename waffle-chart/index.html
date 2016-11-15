@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Person Grid Example</title>
+    <style type="text/css">
+        #graphic{
+            display:block;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script type="text/javascript">
+    
+    var width  = 500,
+        height = 800;
+    
+    var svg = d3.select("body")
+        .append("svg")
+        .attr("id", "graphic")
+        .attr("width", width)
+        .attr("height", height);
+
+    var howManyAcross = Math.floor(width / 25);
+
+    var thedata = [ "blue", "purple", "green", "red" ];
+
+    /*
+     * Your job is to create a For Loop and populate thedata variable with color strings.
+     *
+     * You can add to a color string to an Array by executing thedata.push("#000000");
+     *
+     * Use conditional statements to setup different color strings for different segments of the chart.
+     */
+
+
+    for(var i=0; i < 500; i++){
+		
+//		if(i > 0 && i < 20){ 
+//			thedata.push("#000000");
+//		}
+//		
+//		if(i > 20 && i < 60){
+//			thedata.push("#ff0000");
+//		}
+//		
+//		if(i > 60 && i < 100){
+//			thedata.push("blue")
+//		}
+		
+		if(i % 3 == 1){
+			thedata.push("black");
+		}
+		
+		if( i % 3 == 2){
+			thedata.push("steelblue");
+		}
+	}
+
+
+    //make sure to populate the data before the code below
+    svg.selectAll("g")
+        .data(thedata)
+        .enter()
+        .append("g")
+        .attr("transform", function(d, i){ return "translate(" + ((i % howManyAcross) * 25) + "," + (Math.floor(i/howManyAcross) * 70) + ")"})
+        .append("path")
+        .attr("d", "M18,8c0-4.417-3.582-8-8-8C5.582,0,2,3.583,2,8c0,4.418,3.582,8,8,8C14.418,16,18,12.418,18,8z M13.291,16H10H6.708c-3.682,0-6.666,2.984-6.666,6.666V41.82c0,1.75,1.334,3.172,3.038,3.342v19.779H16.92V45.162c1.703-0.17,3.037-1.592,3.037-3.342V22.666C19.957,18.984,16.973,16,13.291,16z")
+        .style("fill", "white")
+        .transition()
+        .duration(100)
+        .delay(function(d,i){ return i * 20;})
+        .style("fill", function(d){ return d; });
+
+</script>
+</body>
+</html>

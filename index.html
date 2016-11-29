@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Paayal Zaveri's Portfolio</title>
-
-
-	<link href="https://fonts.googleapis.com/css?family=Lato:400,600,700,800" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     
@@ -25,10 +22,11 @@
 		
 		h1{
 			padding-top:10px;
+		    font-size: 40px;
 		}
         
         .container{
-            max-width: 960px;
+            max-width: 900px;
         }
         
         .row{
@@ -47,20 +45,26 @@
         .inner-box > h2,
         .inner-box > h3{
             padding: 0 10px;
+			text-align: center;
         }
 		
 		.inner-box > h3 {
-			font-size: 18px;
+			font-size: 16px;
+			padding-bottom: 8px;
+			font-weight: 300;
 
 		}
 		
+		
 		.inner-box > p{
 			font-size: 13px;
-			color:#6A6A61;
+/*			color:#6A6A61;*/
+			line-height: 0.7em;
+			font-weight: 400;
 		}
 		
 		.lead{
-			font-size: 20px;
+			font-size: 22px;
 		}
 		
 		.bio{
@@ -88,9 +92,25 @@
 			color:#111111;
 		}
 		
-		.icon{
-			padding-bottom: 30px;
+		.section{
+			font-size: 20px;
+			text-align: center;
+			padding-top:15px;
+			padding-bottom:0px;
 		}
+		
+		.icon{
+			padding-bottom: 40px;
+		}
+		
+		.icon > a{
+			color:#611427;
+		}
+		
+		.icon > a:hover{
+			color:#8C1D39;
+		}
+		
 		
 	
     
@@ -107,7 +127,7 @@
     <header class="text-center">
         <h1>Paayal Zaveri</h1>
         <p class="lead"> Multimedia Journalist </p>
-		<p class="bio"> I'm a journalist from the San Francisco Bay Area and currently a master's candidate at the <a href="https://journalism.berkeley.edu/students/paayal_zaveri/"> University of California, Berkeley Graduate School of Journalism</a>. Here you can find a portfolio of my coding and data visualization projects. My writing and reporting porfolio can be found at <a href="http://www.paayalzaveri.com"> paayalzaveri.com</a>. </p>
+		<p class="bio">Hi! I'm Paayal Zaveri, a journalist from the San Francisco Bay Area. I'm currently a master's candidate at the  <a href="https://journalism.berkeley.edu/students/paayal_zaveri/"> University of California, Berkeley Graduate School of Journalism</a>. I am a writer, with experience in online, radio and broadcast storytelling and am learning how to code. <br>My work has been published in CNBC, KQED Public Radio, San Francisco Public Press and Richmond Confidential. Here you can find a portfolio of my published work and selected coding and data visualization projects. <br> My resume is available <a href="Paayal%20Zaveri_RESUME_for_web.pdf" target="_blank">here</a>. </p>
     </header>
 	
 	<div class="container col-md-6 col-md-offset-3 text-center icon">
@@ -120,9 +140,9 @@
     
 
 
-    <div class="container">        
-
-
+    <div class="container">  
+		
+		<p class="lead section">Data Visualization and Coding</p>
 
         <div class="row">
             	
@@ -132,17 +152,8 @@
                         <img class="img-responsive center-block" src="student-debt/screenshot.png" alt="chart">
                     </a>
                     <h3>Student Debt per State</h3>
-                    <p>Bar chart showing the average amount of student debt per state</p>
-                </div>
-            </div>
-			
-			<div class="col-sm-4 text-center">
-                <div class="inner-box">
-                    <a href="/oil-production/" target="_blank">
-                        <img class="img-responsive center-block" src="oil-production/screenshot.png" alt="chart">
-                    </a>
-                    <h3>Global Oil Production</h3>
-                    <p>Line chart showing the change in rate of global oil production from 2000 to 2014</p>
+                    <p>Data Visualization</p>
+					<p>class project using d3</p>
                 </div>
             </div>
 			
@@ -152,7 +163,19 @@
                         <img class="img-responsive center-block" src="img/richmond_map.png" alt="chart">
                     </a>
                     <h3>How will Contra Costa vote in the presidential campaign?</h3>
-                    <p>interactive map</p>
+                    <p>Data Visualization </p>
+					<p>Richmond Confidential (using d3)</p>
+                </div>
+            </div>
+			
+			<div class="col-sm-4 text-center">
+                <div class="inner-box">
+                    <a href="/oil-production/" target="_blank">
+                        <img class="img-responsive center-block" src="oil-production/screenshot.png" alt="chart">
+                    </a>
+                    <h3>Global Oil Production</h3>
+                    <p>Data Visualization</p>
+					<p>class project using d3</p>
                 </div>
             </div>
 			
@@ -167,18 +190,8 @@
                         <img class="img-responsive center-block" src="img/neonatal_deaths.png" alt="chart">
                     </a>
                     <h3>Saving the Children</h3>
-                    <p>Neonatal deaths from 1990 to 2014</p>
-                </div>
-            </div>
-			
-			
-			<div class="col-sm-4 text-center">
-                <div class="inner-box">
-                    <a href="https://public.tableau.com/views/CO2emissions_17/Dashboard1?:embed=y&:display_count=yes" target="_blank">
-                        <img class="img-responsive center-block" src="img/co2_emissions" alt="chart">
-                    </a>
-                    <h3>Global Warming: Whose to blame? </h3>
-                    <p>Carbon Dioxide emissions from 2000 to 2011</p>
+                    <p>Data Visualization</p>
+					<p>class project using Tableau</p>
                 </div>
             </div>
 			
@@ -186,14 +199,84 @@
 			
 			<div class="col-sm-4 text-center">
                 <div class="inner-box">
-                    <a href="http://richmondconfidential.org/wp-content/uploads/2015/09/TESTRESULTS_Zaveri_final.jpg" target="_blank">
+                    <a href="http://richmondconfidential.org/2015/09/16/tougher-standardized-testing-in-schools-leads-to-poor-results-in-district" target="_blank">
                         <img class="img-responsive center-block" src="img/test_results.png"alt="chart">
                     </a>
-                    <h3>Standardized testing results </h3>
-                    <p><a href="http://richmondconfidential.org/2015/09/16/tougher-standardized-testing-in-schools-leads-to-poor-results-in-district/">Tougher standardized testing in schools highlights poor results in district</a></p>
+                    <h3>Tougher standardized testing in schools highlights poor results in district </h3>
+                    <p>Writing, Data Visualization</p>
+					<p>Richmond Confidential</p>
                 </div>
             </div>
 			
+			
+			
+		</div>
+		
+		<p class="lead section">Writing and Radio</p>
+		
+		<div class ="row">
+			
+			<div class="col-sm-4 text-center">
+                <div class="inner-box">
+                    <a href="http://sfpublicpress.org/news/2014-11/formerly-homeless-residents-may-face-higher-eviction-rate-than-other-sf-tenants" target="_blank">
+                        <img class="img-responsive center-block" src="img/evictions.jpg"alt="chart">
+                    </a>
+                    <h3>Formerly Homeless Residents May Face Higher Eviction Rate</h3>
+                    <p>Writing, Photos</p>
+						<p>SF Public Press</p>
+                </div>
+            </div>
+			
+			<div class="col-sm-4 text-center">
+                <div class="inner-box">
+                    <a href="http://www.cnbc.com/2016/08/11/canada-mexico-tighten-trade-ties-while-us-grows-skittish.html" target="_blank">
+                        <img class="img-responsive center-block" src="img/canada_mexico.jpg"alt="chart">
+                    </a>
+                    <h3>Canada, Mexico tighten trade ties while US grows skittish</h3>
+                    <p>Writing</p>
+						<p>CNBC.com</p>
+                </div>
+			</div>
+			
+			<div class="col-sm-4 text-center">
+                <div class="inner-box">
+                    <a href="http://richmondconfidential.org/2016/03/14/former-doctors-medical-center-in-contact-to-become-hotel/" target="_blank">
+                        <img class="img-responsive center-block" src="img/dmc.jpg"alt="chart">
+                    </a>
+                    <h3>Former Doctors Medical Center in contract to become hotel</h3>
+                    <p>Writing, Photos</p>
+						<p>Richmond Confidential</p>
+                </div>
+            </div>
+		
+		</div>
+		
+		<div class="row">
+			
+			<div class="col-sm-4 text-center">
+                <div class="inner-box">
+                    <a href="https://ww2.kqed.org/news/2015/06/06/meet-the-man-behind-the-scenes-of-the-san-francisco-ethnic-dance-festival/" target="_blank">
+                        <img class="img-responsive center-block" src="img/carvajal.jpg"alt="chart">
+                    </a>
+                    <h3>Meet the Man Behind the Scenes of the San Francisco Ethnic Dance Festival</h3>
+                    <p>Radio, Writing</p>
+						<p>KQED Public Radio</p>
+                </div>
+            </div>
+			
+			<div class="col-sm-4 text-center">
+                <div class="inner-box">
+                    <a href="http://richmondconfidential.org/2015/12/10/richmond-schools-adapt-to-growing-need-for-bilingual-teachers/" target="_blank">
+                        <img class="img-responsive center-block" src="img/BILINGUAL.jpg"alt="chart">
+                    </a>
+                    <h3>Richmond schools adapt to growing need for bilingual teachers</h3>
+                    <p>Writing, Photos, Graphics</p>
+						<p>Richmond Confidential</p>
+                </div>
+            </div>
+			
+		
+		
 		</div>
   
 

@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Paayal Zaveri's Portfolio</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
     
     <style>
         
         body{
             background-color: #ffffff;
-            font-family: "Helvetica", sans-serif;
+            font-family: "Helvetica Neue", sans-serif;
         }
         h1,h2,h3,h4,h5,h6,p{
             font-weight: 500;
@@ -22,7 +23,8 @@
 		
 		h1{
 			padding-top:10px;
-		    font-size: 40px;
+		    font-size: 45px;
+			font-family: "Slabo 27px", serif;
 		}
         
         .container{
@@ -36,22 +38,29 @@
         
         .inner-box{
             background-color: #ffffff;
-            box-shadow: 2px 0px 5px #ccc;
-			min-height: 300px;
+/*            box-shadow: 2px 0px 5px #ccc;*/
+/*			min-height: 300px;*/
 			
         }
+		
+		.center-block{
+			box-shadow: 2px 0px 5px #ccc;
+			min-height: 175px;
+			
+		}
         
         .inner-box > p,
         .inner-box > h1,
         .inner-box > h2,
         .inner-box > h3{
             padding: 0 10px;
-			text-align: center;
+			text-align: left;
         }
 		
 		.inner-box > h3 {
-			font-size: 16px;
+			font-size: 18px;
 			padding-bottom: 8px;
+			font-family: "Slabo 27px", serif;
 			font-weight: 300;
 
 		}
@@ -60,12 +69,12 @@
 		.inner-box > p{
 			font-size: 13px;
 /*			color:#6A6A61;*/
-			line-height: 0.7em;
+			line-height: 0.9em;
 			font-weight: 400;
 		}
 		
 		.lead{
-			font-size: 22px;
+			font-size: 20px;
 		}
 		
 		.bio{
@@ -75,6 +84,7 @@
 			margin-right:auto;
 			padding-left: 20px;
 			padding-right: 20px;
+			font-weight: 400;
 		}
 		
 		.bio > a{
@@ -105,15 +115,103 @@
 		}
 		
 		.icon > a{
-			color:#611427;
+			color:#6A6A61;
 		}
 		
 		.icon > a:hover{
-			color:#8C1D39;
+			color:#1D2326;
 		}
 		
+/*
+		.type{
+			background-color:blue;
+			
+		}
 		
+*/
+		.type {
+			background-color:#611427;
+			color: #ffffff;
+			text-align: left;
+			padding: 3px 5px;
+			max-width: 130px;
+		}
+		
+		footer{
+			padding-top: 10px;
+			padding-bottom: 20px;
+		}
 	
+		@media (max-width:770px){
+			
+/*
+			.inner-box{
+				padding-bottom: 15px;
+				min-height: 300px;
+			}
+			
+*/
+			.row{
+            	padding-top:10px;
+				padding-bottom: 10px;
+			}
+			
+			
+			
+		}
+		
+		@media (max-width:550px){
+			
+			.inner-box{
+				padding-top:5px;
+				padding-bottom: 10px;
+			}
+			
+			h1{
+				font-size: 38px;
+			}
+			
+			.row{
+            	padding-top:5px;
+				padding-bottom: 5px;
+			}
+			
+			.lead{
+				font-size: 16px;
+			}
+			
+			.bio{
+				font-size: 13px
+			}
+			
+			.section{
+				font-size: 18px;
+				padding-top:10px;
+				padding-bottom:0px;
+				
+			}
+			
+			.inner-box > h3 {
+				font-size: 16px;
+				padding-bottom: 5px;
+
+			}
+		
+		
+			.inner-box > p{
+				font-size: 12px;
+				line-height: 0.8em;
+				
+			}
+			
+			.icon{
+				padding-bottom: 30px;
+			}
+			
+			
+			
+			
+		}
     
     </style>
 
@@ -135,10 +233,9 @@
 		 <a href="mailto:paayalz2010@gmail.com" target="_blank"><i class="fa fa-envelope fa-2x"></i></a>
 		<a href="https://www.linkedin.com/in/paayal-zaveri-b902ba90" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
         <a href="https://twitter.com/paayalzaveri" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
-        
 	
 	</div>
-    
+   
 
 
     <div class="container">  
@@ -155,7 +252,7 @@
                         <img class="img-responsive center-block" src="student-debt/screenshot.png" alt="chart">
                     </a>
                     <h3>Student Debt per State</h3>
-                    <p>Data Visualization</p>
+					<p><span class="type"> Data Visualization</span> </p>
 					<p>class project using d3</p>
                 </div>
             </div>
@@ -166,8 +263,8 @@
                         <img class="img-responsive center-block" src="img/richmond_map.png" alt="chart">
                     </a>
                     <h3>How will Contra Costa vote in the presidential campaign?</h3>
-                    <p>Data Visualization </p>
-					<p>Richmond Confidential (using d3)</p>
+                    <p><span class ="type">Data Visualization</span></p>
+					<p>Richmond Confidential</p>
                 </div>
             </div>
 			
@@ -177,7 +274,7 @@
                         <img class="img-responsive center-block" src="oil-production/screenshot.png" alt="chart">
                     </a>
                     <h3>Global Oil Production</h3>
-                    <p>Data Visualization</p>
+					<p><span class="type"> Data Visualization</span> </p>
 					<p>class project using d3</p>
                 </div>
             </div>
@@ -193,7 +290,7 @@
                         <img class="img-responsive center-block" src="img/neonatal_deaths.png" alt="chart">
                     </a>
                     <h3>Saving the Children</h3>
-                    <p>Data Visualization</p>
+                    <p><span class="type">Data Visualization</span> </p>
 					<p>class project using Tableau</p>
                 </div>
             </div>
@@ -206,7 +303,7 @@
                         <img class="img-responsive center-block" src="img/test_results.png"alt="chart">
                     </a>
                     <h3>Tougher standardized testing in schools highlights poor results in district </h3>
-                    <p>Writing, Data Visualization</p>
+                    <p><span class ="type">Writing, Data Visualization</span></p>
 					<p>Richmond Confidential</p>
                 </div>
             </div>
@@ -227,8 +324,8 @@
                         <img class="img-responsive center-block" src="img/evictions.jpg"alt="chart">
                     </a>
                     <h3>Formerly Homeless Residents May Face Higher Eviction Rate</h3>
-                    <p>Writing, Photos</p>
-						<p>SF Public Press</p>
+					<p><span class="type">Writing, Photos</span></p>
+						<p>San Francisco Public Press</p>
                 </div>
             </div>
 			
@@ -238,7 +335,7 @@
                         <img class="img-responsive center-block" src="img/canada_mexico.jpg"alt="chart">
                     </a>
                     <h3>Canada, Mexico tighten trade ties while US grows skittish</h3>
-                    <p>Writing</p>
+                    <p><span class="type">Writing</span></p>
 						<p>CNBC.com</p>
                 </div>
 			</div>
@@ -249,8 +346,8 @@
                         <img class="img-responsive center-block" src="img/dmc.jpg"alt="chart">
                     </a>
                     <h3>Former Doctors Medical Center in contract to become hotel</h3>
-                    <p>Writing, Photos</p>
-						<p>Richmond Confidential</p>
+                    <p><span class="type">Writing, Photos</span></p>
+					<p>Richmond Confidential</p>
                 </div>
             </div>
 		
@@ -264,7 +361,7 @@
                         <img class="img-responsive center-block" src="img/carvajal.jpg"alt="chart">
                     </a>
                     <h3>Meet the Man Behind the Scenes of the San Francisco Ethnic Dance Festival</h3>
-                    <p>Radio, Writing</p>
+                    <p><span class="type">Radio, Writing</span></p>
 						<p>KQED Public Radio</p>
                 </div>
             </div>
@@ -275,17 +372,32 @@
                         <img class="img-responsive center-block" src="img/BILINGUAL.jpg"alt="chart">
                     </a>
                     <h3>Richmond schools adapt to growing need for bilingual teachers</h3>
-                    <p>Writing, Photos, Graphics</p>
+                    <p><span class="type">Writing, Photos, Graphics</span></p>
 						<p>Richmond Confidential</p>
                 </div>
             </div>
 			
+			<div class="col-sm-4 text-center">
+                <div class="inner-box">
+                    <a href="http://www.nbcnews.com/news/asian-america/how-tabla-teacher-arshad-syed-went-playing-drums-recording-grateful-n605981" target="_blank">
+                        <img class="img-responsive center-block" src="img/tabla.jpg" alt="chart">
+                    </a>
+                    <h3>Meet the Tabla Teacher Who Recorded with the Grateful Dead</h3>
+                    <p><span class="type">Video, Writing</span></p>
+						<p>NBCNews.com</p>
+                </div>
+            </div>
 		
 		
 		</div>
   
 
 </div><!-- end .container -->
+	
+<footer class="container col-md-6 col-md-offset-3 text-center">
+	<hr>
+	© Paayal Zaveri, 2016
+</footer>
 
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>

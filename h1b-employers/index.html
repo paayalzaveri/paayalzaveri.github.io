@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>H-1B employers</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    /* custom css styles will go here */
+		body{
+			background:#fdfdfd;
+			font-family: "Lato", sans-serif;
+		
+		}
+		
+		h3{
+			font-size: 1.8em;
+		}
+		
+		p{
+			font-weight: 300;
+		}
+		
+		/*CSS for chart */
+		.bar{
+			opacity: 0.7;
+		}
+		
+/*
+		button{
+			font-family: "Lato", sans-serif;
+		}
+*/
+	
+		#years{
+			padding-top: 20px;
+			padding-bottom: 5px;	
+		}
+		
+		.btn-sm{
+			font-size: 14px;
+			font-family: "Lato", sans-serif;
+			font-weight: 300;
+			color:#ffffff;
+			background: #aeaeae;
+			border:1px solid #aeaeae;
+			margin-left: 10px;
+			margin-right: 15px;
+		}
+		
+		.btn-sm:hover{
+			background: #363636;
+			color:#ffffff;
+		}
+		
+		#btn2010.active, #btn2011.active, #btn2012.active, #btn2013.active, #btn2014.active, #btn2015.active{
+/*			border: 1px solid #aeaeae;*/
+			box-shadow: 2px 0px 2px #aeaeae;
+			background: #363636;
+			color:#ffffff;
+		}
+		
+
+		.xscale{
+			font-family: "Lato", sans-serif;
+			font-size: 9px;
+			font-weight: 300;
+			margin-bottom: 50px;
+		}
+		
+		.xscale path, .xscale line{
+			stroke: #aeaeae;
+			stroke-width: 0.09em;
+		}
+			
+		.yscale{
+			font-family: "Lato", sans-serif;
+			font-weight: 300;
+		}
+		
+		.yscale path, .yscale line{
+			display:none;
+		}
+		
+		.legend{
+			padding-top: 10px;
+			width:800px;
+			height: auto;
+		}
+		
+		@media (max-width:990px){
+			#years{
+				padding-top:15px;
+			}
+			
+			.btn-sm{
+				font-size: 12px;
+				margin-right: 8px;
+			}
+		}
+		
+		
+
+    </style>
+</head>
+<body>
+	
+	<div class="container text-center">
+		
+		<h3>Which Companies Hire the Most H-1B Visa Workers?</h3>
+		
+		<p>Toggle between the years to see how these companies change over time.</p>
+	
+		<div id="years"> 
+		<button class="btn btn-default btn-sm active"id="btn2010">2010</button>
+		<button class="btn btn-default btn-sm" id="btn2011">2011</button>
+		<button class="btn btn-default btn-sm"id="btn2012">2012</button>
+		<button class="btn btn-default btn-sm" id="btn2013">2013</button>
+		<button class="btn btn-default btn-sm" id="btn2014">2014</button>
+		<button class="btn btn-default btn-sm" id="btn2015">2015</button>
+		</div>
+		
+		<img src="legend%20for%20chart.svg" width="80%" height="auto">
+	</div>
+	
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+	<script>
+  	
+		
+        //your d3 code will go here
+		
+		var margin = {top:50, right:100, bottom:100, left:180},
+			width  = 700 - margin.left - margin.right,
+			height = 500 - margin.top - margin.bottom;
+
+		var svg = d3.select("body")
+			.append("svg")
+			.attr("width", "100%")
+			.attr("height", "100%")
+			.attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom));
+
+		var chart = svg.append("g")
+			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+		
+		var xScale = d3.scaleLinear()
+			.range([0, width]);
+
+		var yScale = d3.scaleBand()
+			.range([height, 0])
+			.padding(0.1);
+		
+		var colorScale = d3.scaleOrdinal()
+			.range(["#3c9a42", "#3855c3", "#1ca2a4", "#e58a28", "#c14040"]);
+		
+	
+		
+		var chartLoop;
+		
+		d3.csv("employers_grouped.csv", function(error, data){
+    		if (error) throw error; //catch any errors
+			
+		
+			
+		//map function goes through every element, then returns a number for total
+		data = data.map(function(d){ 
+    		d["total"] = +d["total"]; 
+    		return d;
+		});
+		
+		console.log(data.filter(function(d){ return d.year == "2010"}));
+			
+			
+		//xScale.domain([0, d3.max(data, function(d){ return d["total"]; })]);
+			
+		xScale.domain([0, 160000]);
+			
+		colorScale.domain(data.map(function(d){ return d["company_type"];}))
+
+			//xscale is unique values in your data (Age Group, since they are all different)
+		yScale.domain(data
+			.filter(function(d){ return d["year"] == "2010"; })
+			.sort(function(a, b){ return a["total"] - b["total"]; })
+			.map(function(d){ return d["employer_clean"]; })
+		);
+			
+		chartLoop = chart.selectAll(".bar")
+			.data(data)
+    		.enter();
+			
+			
+    	chartLoop.append("rect")
+    		.attr("class", "bar")
+    		.attr("y", function(d){ return yScale(d["employer_clean"]); })
+			.attr("x", function(d){ return 0; })
+    		.attr("width", function(d){ if(d["year"] == "2010") { return xScale(d["total"]) } else { return 0 }; })
+    		.attr("height", function(d){ return yScale.bandwidth(); })
+			.attr("fill", function(d){ return colorScale(d["company_type"]); });
+			
+		chartLoop.append("text")
+			.attr("class", "label")
+			.attr("x", function(d){ if(d["year"] == "2010") { return xScale(d["total"]) } else { return 0 }; })
+			.attr("y", function(d){ return yScale(d["employer_clean"]) + 12; })
+			.text(function(d){ if(d["year"] == "2010") return d3.format(",")(d["total"]); })
+			.style("font-size", "9px")
+			.style("font-family", "Lato")
+			.style("font-weight", 300)
+		
+//		svg.selectAll(".textlabel")
+//			.data(data)
+//			.enter()
+//    		.append("text")
+//    		.attr("class", "textlabel")
+//    		.attr("x", (function(d) { return xScale(d.food) + xScale.rangeBand() / 2 ; }  ))
+//	  .attr("y", function(d) { return yScale(d.quantity) + 1; })
+//    		.text(function(d){ return d3.format("")(d["total"]); });
+		
+		d3.select("#btn2010")
+			.on("click", function(e, i){
+			
+				d3.selectAll("button")
+					.classed("active", false);
+			
+				d3.select("#btn2010")
+					.classed("active", true);
+			
+				yScale.domain(data
+					.filter(function(d){ return d["year"] == "2010"; })
+					.sort(function(a, b){ return a["total"] - b["total"]; })
+					.map(function(d){ return d["employer_clean"]; })
+				);
+			
+				chart.selectAll(".bar")
+					.transition()
+					.duration(800)
+					.attr("y", function(d){ return yScale(d["employer_clean"]); })
+					.attr("width", function(d){if(d["year"] == "2010") { return xScale(d["total"]) } else { return 0 }; });
+					
+				svg.selectAll(".yscale")
+					.transition()
+					.duration(800)
+					.call(d3.axisLeft(yScale));
+			
+				chartLoop.selectAll(".label")
+					.attr("x", function(d){ if(d["year"] == "2010") { return xScale(d["total"]) } else { return 0 }; })
+					.attr("y", function(d){ return yScale(d["employer_clean"]) + 12; })
+					.text(function(d){ if(d["year"] == "2010") return d3.format(",")(d["total"]); })
+					.style("font-size", "9px")
+					.style("font-family", "Lato")
+					.style("font-weight", 300)
+					
+			
+			});
+		
+		d3.select("#btn2011")
+			.on("click", function(e, i){
+			
+				d3.selectAll("button")
+					.classed("active", false);
+			
+				d3.select("#btn2011")
+					.classed("active", true);
+			
+				yScale.domain(data
+					.filter(function(d){ return d["year"] == "2011"; })
+					.sort(function(a, b){ return a["total"] - b["total"]; })
+					.map(function(d){ return d["employer_clean"]; })
+				);
+			
+				chart.selectAll(".bar")
+					.transition()
+					.duration(800)
+					.attr("y", function(d){ return yScale(d["employer_clean"]); })
+					.attr("width", function(d){if(d["year"] == "2011") { return xScale(d["total"]) } else { return 0 }; });
+					
+				svg.selectAll(".yscale")
+					.transition()
+					.duration(800)
+					.call(d3.axisLeft(yScale));
+			
+				chartLoop.selectAll(".label")
+					.attr("x", function(d){ if(d["year"] == "2011") { return xScale(d["total"]) } else { return 0 }; })
+					.attr("y", function(d){ return yScale(d["employer_clean"]) + 12; })
+					.text(function(d){ if(d["year"] == "2011") return d3.format(",")(d["total"]); })
+					.style("font-size", "9")
+					.style("font-family", "Lato")
+					.style("font-weight", 300)
+			
+			});
+			
+		d3.select("#btn2012")
+			.on("click", function(e, i){
+			
+				d3.selectAll("button")
+					.classed("active", false);
+			
+				d3.select("#btn2012")
+					.classed("active", true);
+			
+				yScale.domain(data
+					.filter(function(d){ return d["year"] == "2012"; })
+					.sort(function(a, b){ return a["total"] - b["total"]; })
+					.map(function(d){ return d["employer_clean"]; })
+				);
+			
+				chart.selectAll(".bar")
+					.transition()
+					.duration(800)
+					.attr("y", function(d){ return yScale(d["employer_clean"]); })
+					.attr("width", function(d){if(d["year"] == "2012") { return xScale(d["total"]) } else { return 0 }; });
+					
+				svg.selectAll(".yscale")
+					.transition()
+					.duration(800)
+					.call(d3.axisLeft(yScale));
+			
+				chartLoop.selectAll(".label")
+					.attr("x", function(d){ if(d["year"] == "2012") { return xScale(d["total"]) } else { return 0 }; })
+					.attr("y", function(d){ return yScale(d["employer_clean"]) + 12; })
+					.text(function(d){ if(d["year"] == "2012") return d3.format(",")(d["total"]); })
+					.style("font-size", "9")
+					.style("font-family", "Lato")
+					.style("font-weight", 300)
+			
+			});
+			
+		d3.select("#btn2013")
+			.on("click", function(e, i){
+			
+				d3.selectAll("button")
+					.classed("active", false);
+			
+				d3.select("#btn2013")
+					.classed("active", true);
+			
+				yScale.domain(data
+					.filter(function(d){ return d["year"] == "2013"; })
+					.sort(function(a, b){ return a["total"] - b["total"]; })
+					.map(function(d){ return d["employer_clean"]; })
+				);
+			
+				chart.selectAll(".bar")
+					.transition()
+					.duration(800)
+					.attr("y", function(d){ return yScale(d["employer_clean"]); })
+					.attr("width", function(d){if(d["year"] == "2013") { return xScale(d["total"]) } else { return 0 }; });
+					
+				svg.selectAll(".yscale")
+					.transition()
+					.duration(800)
+					.call(d3.axisLeft(yScale));
+			
+				chartLoop.selectAll(".label")
+					.attr("x", function(d){ if(d["year"] == "2013") { return xScale(d["total"]) } else { return 0 }; })
+					.attr("y", function(d){ return yScale(d["employer_clean"]) + 12; })
+					.text(function(d){ if(d["year"] == "2013") return d3.format(",")(d["total"]); })
+					.style("font-size", "9")
+					.style("font-family", "Lato")
+					.style("font-weight", 300)
+			
+			});
+		
+		
+		d3.select("#btn2014")
+			.on("click", function(e, i){
+			
+				d3.selectAll("button")
+					.classed("active", false);
+			
+				d3.select("#btn2014")
+					.classed("active", true);
+			
+				yScale.domain(data
+					.filter(function(d){ return d["year"] == "2014"; })
+					.sort(function(a, b){ return a["total"] - b["total"]; })
+					.map(function(d){ return d["employer_clean"]; })
+				);
+			
+				chart.selectAll(".bar")
+					.transition()
+					.duration(800)
+					.attr("y", function(d){ return yScale(d["employer_clean"]); })
+					.attr("width", function(d){if(d["year"] == "2014") { return xScale(d["total"]) } else { return 0 }; });
+					
+				svg.selectAll(".yscale")
+					.transition()
+					.duration(800)
+					.call(d3.axisLeft(yScale));
+			
+				chartLoop.selectAll(".label")
+					.attr("x", function(d){ if(d["year"] == "2014") { return xScale(d["total"]) } else { return 0 }; })
+					.attr("y", function(d){ return yScale(d["employer_clean"]) + 12; })
+					.text(function(d){ if(d["year"] == "2014") return d3.format(",")(d["total"]); })
+					.style("font-size", "9")
+					.style("font-family", "Lato")
+					.style("font-weight", 300)
+			
+			});
+			
+		d3.select("#btn2015")
+			.on("click", function(e, i){
+			
+				d3.selectAll("button")
+					.classed("active", false);
+			
+				d3.select("#btn2015")
+					.classed("active", true);
+			
+				yScale.domain(data
+					.filter(function(d){ return d["year"] == "2015"; })
+					.sort(function(a, b){ return a["total"] - b["total"]; })
+					.map(function(d){ return d["employer_clean"]; })
+				);
+			
+				chart.selectAll(".bar")
+					.transition()
+					.duration(800)
+					.attr("y", function(d){ return yScale(d["employer_clean"]); })
+					.attr("width", function(d){if(d["year"] == "2015") { return xScale(d["total"]) } else { return 0 }; });
+					
+				svg.selectAll(".yscale")
+					.transition()
+					.duration(800)
+					.call(d3.axisLeft(yScale));
+			
+				chartLoop.selectAll(".label")
+					.attr("x", function(d){ if(d["year"] == "2015") { return xScale(d["total"]) } else { return 0 }; })
+					.attr("y", function(d){ return yScale(d["employer_clean"]) + 12; })
+					.text(function(d){ if(d["year"] == "2015") return d3.format(",")(d["total"]); })
+					.style("font-size", "9")
+					.style("font-family", "Lato")
+					.style("font-weight", 300)
+			
+			});
+				
+	
+		
+		svg.append("g")
+			.attr("class", "xscale")
+			.attr("transform", "translate(" + margin.left + "," + ( margin.top) + ")")
+			.call(d3.axisTop(xScale));
+	
+		
+		svg.append("g")
+			.attr("class", "yscale")
+			.attr("transform", "translate(" + margin.left + "," +  margin.top + ")")
+    		.call(d3.axisLeft(yScale));
+			
+			
+		
+		
+		svg.append("text")
+			.attr("y", margin.top -25)
+			.attr("x", width/2 + 150)
+			.text("Workers Requested")
+			.style("font-family", "Lato")
+			.style("font-size", "10px")
+			.style("font-weight", "300");
+			
+//			
+//		svg.append("g")
+//    		.attr("transform", "translate(" + (width/2) + ", 25)")
+//			.append("text")
+//    		.text("Student Debt per State")
+//			.style("font-family", "Helvetica")
+//			.style("font-size", "20px");
+			
+		
+		svg.append("text")
+			.attr("y", height + 70)
+			.attr("x", width - 240)
+			.text("Source: Department of Labor, Office of Foreign Labor Certification, Data is FY 2010-2015, all company data includes subsidiaries")
+			.style("font-family", "Lato")
+			.style("font-weight", "300")
+			.style("font-size", "8px");
+			
+		svg.append("text")
+			.attr("y", height + 80)
+			.attr("x", width - 240)
+			.text("*Satyam Computer Services merged with Tech Mahindra in 2013.")
+			.style("font-family", "Lato")
+			.style("font-weight", "300")
+			.style("font-size", "8px");
+			
+		
+			
+	})
+
+
+    </script>
+		
+		
+</body>
+</html>

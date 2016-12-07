@@ -11,8 +11,18 @@
 		.bar{
 			stroke: none;
 			fill: #46984a;
+			opacity: 0.8;
 		}
 		
+		.yscale path, .yscale line{
+			display:none;
+			
+		}
+		
+		.xscale path, .xscale line{
+			stroke: #aeaeae;
+			stroke-width: 0.09em;
+		}
 
     </style>
 </head>
@@ -90,10 +100,12 @@
 		
 		
 		svg.append("g")
+			.attr("class", "xscale")
 			.attr("transform", "translate(" + margin.left + "," + (height + margin.top) + ")")
 			.call(d3.axisBottom(xScale).tickFormat(d3.format("$,")));
 		
 		svg.append("g")
+			.attr("class", "yscale")
 			.attr("transform", "translate(" + margin.left + "," +  margin.top + ")")
     		.call(d3.axisLeft(yScale))
 			
@@ -104,7 +116,7 @@
 			.attr("x", width/2)
 			.text("Average debt per borrower")
 			.style("font-family", "Helvetica")
-			.style("font-size", "14px");
+			.style("font-size", "12px");
 			
 			
 		svg.append("g")
@@ -112,7 +124,7 @@
 			.append("text")
     		.text("Student Debt per State")
 			.style("font-family", "Helvetica")
-			.style("font-size", "20px");
+			.style("font-size", "18px");
 			
 		
 		svg.append("text")

@@ -1,0 +1,121 @@
+employer_clean,year,total,company_type
+Infosys,2010,82708,Indian Outsourcing Firm
+Cognizant,2010,24545,US Outsourcing Firm
+Wipro,2010,17282,Indian Outsourcing Firm
+Oracle,2010,13292,Private Company
+Fujitsu America,2010,10892,Private Company
+Mphasis,2010,7400,Private Company
+Itelligence,2010,7251,Overseas Company
+Pricewaterhousecoopers,2010,6496,Private Company
+IBM,2010,6358,Private Company
+Deloitte,2010,4900,Private Company
+NYC Department Of Education,2010,4350,Public Agency
+Microsoft,2010,4176,Private Company
+Accenture,2010,3818,Overseas Company
+Syntel,2010,3577,US Outsourcing Firm
+Mastech Alliance,2010,3389,US Outsourcing Firm
+Hewlett Packard,2010,3309,Private Company
+Cisco,2010,3270,Private Company
+Synopsys,2010,2289,Private Company
+Satyam Computer Services*,2010,1837,Indian Outsourcing Firm
+Amazon,2010,1678,Private Company
+Wipro,2011,97557,Indian Outsourcing Firm
+Infosys,2011,68693,Indian Outsourcing Firm
+Cognizant,2011,51842,US Outsourcing Firm
+Syntel,2011,19079,US Outsourcing Firm
+Pricewaterhousecoopers,2011,15428,Private Company
+Mphasis,2011,12380,Private Company
+Itelligence,2011,9840,Overseas Company
+Accenture,2011,9033,Overseas Company
+HCL America,2011,8715,Indian Outsourcing Firm
+Deloitte,2011,8319,Private Company
+Oracle,2011,7753,Private Company
+Fujitsu America,2011,7685,Private Company
+Tata,2011,5853,Indian Outsourcing Firm
+Igate Technologies,2011,4085,US Outsourcing Firm
+Synopsys,2011,4044,Private Company
+Microsoft,2011,3920,Private Company
+IBM,2011,3621,Private Company
+Mindtree Limited,2011,3500,Indian Outsourcing Firm
+Cisco,2011,3495,Private Company
+NYC Department Of Education,2011,3443,Public Agency
+Wipro,2012,75893,Indian Outsourcing Firm
+Syntel,2012,74898,US Outsourcing Firm
+Infosys,2012,52449,Indian Outsourcing Firm
+Cognizant,2012,39776,US Outsourcing Firm
+Patni Americas,2012,37992,Indian Outsourcing Firm
+Pricewaterhousecoopers,2012,25096,Private Company
+Igate Technologies,2012,22359,US Outsourcing Firm
+Mphasis,2012,18797,Private Company
+Deloitte,2012,17127,Private Company
+Oracle,2012,12614,Private Company
+Tata,2012,12473,Indian Outsourcing Firm
+Accenture,2012,11346,Overseas Company
+HCL America,2012,9669,Indian Outsourcing Firm
+Itelligence,2012,9181,Overseas Company
+NYC Department Of Education,2012,8623,Public Agency
+Synopsys,2012,7473,Private Company
+Mindtree Limited,2012,7301,Indian Outsourcing Firm
+Satyam Computer Services*,2012,7039,Indian Outsourcing Firm
+Microsoft,2012,5042,Private Company
+IBM,2012,5024,Private Company
+Wipro,2013,102218,Indian Outsourcing Firm
+Syntel,2013,85383,US Outsourcing Firm
+Igate Technologies,2013,62905,US Outsourcing Firm
+Infosys,2013,40423,Indian Outsourcing Firm
+Cognizant,2013,33065,US Outsourcing Firm
+Deloitte,2013,31991,Private Company
+Pricewaterhousecoopers,2013,29410,Private Company
+Tata,2013,21372,Indian Outsourcing Firm
+Mphasis,2013,18345,Private Company
+Mindtree Limited,2013,10282,Indian Outsourcing Firm
+Itelligence,2013,9700,Overseas Company
+HCL America,2013,9585,Indian Outsourcing Firm
+Patni Americas,2013,9530,Indian Outsourcing Firm
+Accenture,2013,8048,Overseas Company
+Cisco,2013,5541,Private Company
+NYC Department Of Education,2013,5237,Public Agency
+Apple,2013,4977,Private Company
+Satyam Computer Services*,2013,4669,Indian Outsourcing Firm
+IBM,2013,4525,Private Company
+Microsoft,2013,4343,Private Company
+Deloitte,2014,75941,Private Company
+Pricewaterhousecoopers,2014,57909,Private Company
+Cognizant,2014,54078,US Outsourcing Firm
+Wipro,2014,41870,Indian Outsourcing Firm
+Tata,2014,33155,Indian Outsourcing Firm
+Infosys,2014,24026,Indian Outsourcing Firm
+Tech Mahindra*,2014,22737,Indian Outsourcing Firm
+Igate Technologies,2014,20335,US Outsourcing Firm
+Mphasis,2014,20082,Private Company
+Syntel,2014,17431,US Outsourcing Firm
+Mindtree Limited,2014,11738,Indian Outsourcing Firm
+Capgemini,2014,9838,Overseas Company
+Accenture,2014,9644,Overseas Company
+Cisco,2014,9425,Private Company
+HCL America,2014,8527,Indian Outsourcing Firm
+IBM,2014,6415,Private Company
+CSC,2014,6020,Private Company
+Ernst & Young,2014,6019,Overseas Company
+Itelligence,2014,5721,Overseas Company
+Apple,2014,5589,Private Company
+Deloitte,2015,153927,Private Company
+Cognizant,2015,82611,US Outsourcing Firm
+Tata,2015,43812,Indian Outsourcing Firm
+Igate Technologies,2015,35929,US Outsourcing Firm
+Syntel,2015,33638,US Outsourcing Firm
+Infosys,2015,33591,Indian Outsourcing Firm
+Wipro,2015,33048,Indian Outsourcing Firm
+Pricewaterhousecoopers,2015,23781,Private Company
+Mindtree Limited,2015,23540,Indian Outsourcing Firm
+Mphasis,2015,19665,Private Company
+Accenture,2015,17509,Overseas Company
+HCL America,2015,15764,Indian Outsourcing Firm
+Capgemini,2015,15424,Overseas Company
+IBM,2015,11461,Private Company
+Tech Mahindra*,2015,10169,Indian Outsourcing Firm
+Apple,2015,8797,Private Company
+Amazon,2015,8716,Private Company
+Oracle,2015,7703,Private Company
+Fujitsu America,2015,7256,Private Company
+Mastech Alliance,2015,6810,US Outsourcing Firm

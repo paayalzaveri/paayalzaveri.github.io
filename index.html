@@ -13,7 +13,7 @@
     <style>
         
         body{
-            background-color: #ffffff;
+            background-color: #fefefe;
             font-family: "Helvetica Neue", sans-serif;
         }
         h1,h2,h3,h4,h5,h6,p{
@@ -37,7 +37,7 @@
         }
         
         .inner-box{
-            background-color: #ffffff;
+            background-color: #fefefe;
 /*            box-shadow: 2px 0px 5px #ccc;*/
 /*			min-height: 300px;*/
 			
@@ -69,7 +69,7 @@
 		.inner-box > p{
 			font-size: 13px;
 /*			color:#6A6A61;*/
-			line-height: 0.9em;
+			line-height: 1.0em;
 			font-weight: 400;
 		}
 		
@@ -122,19 +122,13 @@
 			color:#1D2326;
 		}
 		
-/*
-		.type{
-			background-color:blue;
-			
-		}
-		
-*/
+
 		.type {
 			background-color:#611427;
 			color: #ffffff;
 			text-align: left;
 			padding: 3px 5px;
-			max-width: 130px;
+			line-height: 1.6em;
 		}
 		
 		footer{
@@ -200,8 +194,12 @@
 		
 			.inner-box > p{
 				font-size: 12px;
-				line-height: 0.8em;
+				line-height: 1.0em;
 				
+			}
+			
+			.type{
+				line-height: 1.4em;
 			}
 			
 			.icon{
@@ -226,7 +224,7 @@
     <header class="text-center">
         <h1>Paayal Zaveri</h1>
         <p class="lead"> Multimedia Journalist </p>
-		<p class="bio">Hi! I'm Paayal Zaveri, a journalist from the San Francisco Bay Area. I'm currently a master's candidate at the  <a href="https://journalism.berkeley.edu/students/paayal_zaveri/"> University of California, Berkeley Graduate School of Journalism</a>. I am a writer, with experience in online, radio and broadcast storytelling and am learning how to code. <br>My work has been published in CNBC, KQED Public Radio, San Francisco Public Press and Richmond Confidential. Here you can find a portfolio of my published work and selected coding and data visualization projects. <br> My resume is available <a href="Paayal_Zaveri_RESUME_for%20web.pdf" target="_blank">here</a>. </p>
+		<p class="bio">Hi! I'm Paayal Zaveri, a journalist from the San Francisco Bay Area. I'm currently a master's candidate at the  <a href="https://journalism.berkeley.edu/students/paayal_zaveri/" target="_blank"> University of California, Berkeley Graduate School of Journalism</a>. I am a writer, with experience in online, radio and broadcast storytelling and am learning how to code. This past summer, I was a <a href="http://www.aaja.org/2016-nbc-summer-partnership/" target="_blank">NBC/AAJA</a> fellow at <a href="http://www.cnbc.com/paayal-zaveri/" target="_blank">CNBC</a>, where I wrote about markets and financial news. My work has been published in CNBC, NBC Asian America, KQED Public Radio, San Francisco Public Press and Richmond Confidential. <br><br> Here you can find a portfolio of my published work and selected coding and data visualization projects. My resume is available <a href="Paayal_Zaveri_RESUME_for%20web.pdf" target="_blank">here</a>. </p>
     </header>
 	
 	<div class="container col-md-6 col-md-offset-3 text-center icon">
@@ -248,12 +246,12 @@
 			
 			<div class="col-sm-4 text-center">
                 <div class="inner-box">
-                    <a href="/h1b-employers/" target="_blank">
-                        <img class="img-responsive center-block" src="h1b-employers/screenshot.png" alt="chart">
+                    <a href="https://paayalzaveri.github.io/h1b-data-project/" target="_blank">
+                        <img class="img-responsive center-block" src="img/h1b.png" alt="chart">
                     </a>
-                    <h3>Which Companies Hire the Most H-1B Visa Workers?</h3>
-					<p><span class="type"> Data Visualization</span> </p>
-					<p>class project using d3</p>
+                    <h3>Entering the Lottery</h3>
+					<p><span class="type"> Data Visualization, Web Design, Reporting, Photos</span> </p>
+					<p>multimedia project exploring the topic of high skilled immigration and H-1B visas through data</p>
                 </div>
             </div>
 			
@@ -264,7 +262,7 @@
                     </a>
                     <h3>Student Debt per State</h3>
 					<p><span class="type"> Data Visualization</span> </p>
-					<p>class project using d3</p>
+					<p>class project using d3, showing the average amount of student debt in each state</p>
                 </div>
             </div>
 			
@@ -275,7 +273,7 @@
                     </a>
                     <h3>How will Contra Costa vote in the presidential campaign?</h3>
                     <p><span class ="type">Data Visualization</span></p>
-					<p>Richmond Confidential</p>
+					<p><strong>Richmond Confidential</strong>, interactive map showing voter turnout by candidate during primary elections in each precinct in Contra Costa County</p>
                 </div>
 			</div>
 			
@@ -290,7 +288,7 @@
                     </a>
                     <h3>Global Oil Production</h3>
 					<p><span class="type"> Data Visualization</span> </p>
-					<p>class project using d3</p>
+					<p>class project using d3, showing the increase in production of oil over the past 15 years</p>
                 </div>
             </div>
 			
@@ -301,12 +299,13 @@
                     </a>
                     <h3>Saving the Children</h3>
                     <p><span class="type">Data Visualization</span> </p>
-					<p>class project using Tableau</p>
+					<p>class project using Tableau, showing how countries reduced infant deaths over time</p>
                 </div>
             </div>
 			
 			
 			
+<!--
 			<div class="col-sm-4 text-center">
                 <div class="inner-box">
                     <a href="http://richmondconfidential.org/2015/09/16/tougher-standardized-testing-in-schools-leads-to-poor-results-in-district" target="_blank">
@@ -314,30 +313,20 @@
                     </a>
                     <h3>Tougher standardized testing in schools highlights poor results in district </h3>
                     <p><span class ="type">Writing, Data Visualization</span></p>
-					<p>Richmond Confidential</p>
+					<p><strong>Richmond Confidential</strong>, story detailing reasons for low scores on state test in a local school district </p>
                 </div>
             </div>
 			
+-->
 			
 			
 		</div>
 		
 		<div class="col-md-6 col-md-offset-3 text-center">
-			<p class="lead section">Writing and Radio</p>
+			<p class="lead section">Writing, Radio, Video</p>
 		</div>
 		
 		<div class ="row">
-			
-			<div class="col-sm-4 text-center">
-                <div class="inner-box">
-                    <a href="http://sfpublicpress.org/news/2014-11/formerly-homeless-residents-may-face-higher-eviction-rate-than-other-sf-tenants" target="_blank">
-                        <img class="img-responsive center-block" src="img/evictions.jpg"alt="chart">
-                    </a>
-                    <h3>Formerly Homeless Residents May Face Higher Eviction Rate</h3>
-					<p><span class="type">Writing, Photos</span></p>
-						<p>San Francisco Public Press</p>
-                </div>
-            </div>
 			
 			<div class="col-sm-4 text-center">
                 <div class="inner-box">
@@ -346,9 +335,22 @@
                     </a>
                     <h3>Canada, Mexico tighten trade ties while US grows skittish</h3>
                     <p><span class="type">Writing</span></p>
-						<p>CNBC.com</p>
+					<p><strong>CNBC.com</strong>, article exploring increased trade between Mexico and Canada, contrasted against U.S. trade policy</p>
                 </div>
 			</div>
+			
+			<div class="col-sm-4 text-center">
+                <div class="inner-box">
+                    <a href="http://sfpublicpress.org/news/2014-11/formerly-homeless-residents-may-face-higher-eviction-rate-than-other-sf-tenants" target="_blank">
+                        <img class="img-responsive center-block" src="img/evictions.jpg"alt="chart">
+                    </a>
+                    <h3>Formerly Homeless Residents May Face Higher Eviction Rate</h3>
+					<p><span class="type">Writing, Photos</span></p>
+						<p><strong>San Francisco Public Press</strong>, investigative piece on evictions from city funded housing for formerly homeless people</p>
+                </div>
+            </div>
+			
+	
 			
 			<div class="col-sm-4 text-center">
                 <div class="inner-box">
@@ -357,13 +359,24 @@
                     </a>
                     <h3>Former Doctors Medical Center in contract to become hotel</h3>
                     <p><span class="type">Writing, Photos</span></p>
-					<p>Richmond Confidential</p>
+					<p><strong>Richmond Confidential</strong>, article looking at the lasting financial repercussions of the closure of a public hospital</p>
                 </div>
             </div>
 		
 		</div>
 		
 		<div class="row">
+				
+			<div class="col-sm-4 text-center">
+                <div class="inner-box">
+                    <a href="http://www.cnbc.com/2016/06/14/brit-risk-brexit-vote-will-spur-market-volatility-strategist-warns.html" target="_blank">
+                        <img class="img-responsive center-block" src="img/brexit.jpg" alt="chart">
+                    </a>
+                    <h3>Brit risk: Brexit vote will spur market volatility, strategist warns</h3>
+                    <p><span class="type">Writing</span></p>
+						<p><strong>CNBC.com</strong>, article about the impending consquences of the Brexit vote</p>
+                </div>
+            </div>
 			
 			<div class="col-sm-4 text-center">
                 <div class="inner-box">
@@ -372,7 +385,7 @@
                     </a>
                     <h3>Meet the Man Behind the Scenes of the San Francisco Ethnic Dance Festival</h3>
                     <p><span class="type">Radio, Writing</span></p>
-						<p>KQED Public Radio</p>
+						<p><strong>KQED Public Radio</strong>, profile of a elderly dancer from San Francisco whose had a lasting impact on local dance culture</p>
                 </div>
             </div>
 			
@@ -383,7 +396,23 @@
                     </a>
                     <h3>Richmond schools adapt to growing need for bilingual teachers</h3>
                     <p><span class="type">Writing, Photos, Graphics</span></p>
-						<p>Richmond Confidential</p>
+					<p><strong>Richmond Confidential</strong>, story about a local school district adapting to their students' changing language needs</p>
+                </div>
+            </div>
+		
+			
+		</div>
+		
+		<div class="row">
+			
+			<div class="col-sm-4 text-center">
+                <div class="inner-box">
+                    <a href="http://ww2.kqed.org/news/2015/08/16/archive-preserves-peoples-memories-of-south-asias-partition/" target="_blank">
+                        <img class="img-responsive center-block" src="img/archive.jpg"alt="chart">
+                    </a>
+                    <h3>Archive Preserves People’s Memories of South Asia’s Partition</h3>
+                    <p><span class="type">Radio, Writing</span></p>
+						<p><strong>KQED Public Radio</strong>, profile of a elderly dancer from San Francisco whose had a lasting impact on local dance culture</p>
                 </div>
             </div>
 			
@@ -394,7 +423,7 @@
                     </a>
                     <h3>Meet the Tabla Teacher Who Recorded with the Grateful Dead</h3>
                     <p><span class="type">Video, Writing</span></p>
-						<p>NBCNews.com</p>
+						<p><strong>NBCNews.com</strong>, video profile of an Indian music teacher from the San Francisco Bay Area</p>
                 </div>
             </div>
 		
